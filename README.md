@@ -46,7 +46,7 @@ Voici quelques fonctionnalités que nous souhaitons :
 
 ### Mise en place d'une page
 
-- [ ] Créez une simple page HTML avec un titre.
+- [ X] Créez une simple page HTML avec un titre.
 - [ ] Ajoutez les libraries jQuery et Bootstrap qui nous serviront pour la suite du développement.
 
 Une fois que tout fonctionne, faites un premier commit ( vous aurez sûrement besoin d'initialiser le repository git ). Quelle est la commande à utiliser ? 🤔
