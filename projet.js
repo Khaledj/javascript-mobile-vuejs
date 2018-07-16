@@ -203,6 +203,9 @@ $('input').keyup(function() {
     $('tbody').empty();
     research(tab,recherche);
 })
+    $('.fas').click(function() {
+
+    })
 })
 
 
