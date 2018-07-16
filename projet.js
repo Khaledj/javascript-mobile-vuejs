@@ -221,6 +221,7 @@ function research(tableau,chaine) {
         $('.row'+j).append('<td>' + tab2[j].isActive + '</td>');
         $('.row'+j).append('<td>' + tab2[j].creation + '</td>');
     }
+    return tab2;
 }
 
 

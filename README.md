@@ -281,8 +281,8 @@ Nous voulons pouvoir chercher dans la table un projet par son nom.
 
 Avant de se pencher sur l'interface écrivons la fonction de recherche.
 
-* Combien la fonction prend-elle de paramètres ?
-* De quel type sera le résultat retourné ?
+* Combien la fonction prend-elle de paramètres ? La fonction prend 2 paramètres : le tableau et la recherche
+* De quel type sera le résultat retourné ? Le résultat retourné sera le nouveau tableau
 
 Avant d'écrire du code, prenez un papier et un crayon pour écrire l'algorithme.
 
