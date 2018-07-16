@@ -188,4 +188,20 @@ let tab = [
         "name": "PUSHCART",
         "creation": "Tue Feb 25 1975 21:31:07 GMT+0100 (Central European Standard Time)"
     }
-]
+];
+
+$(document).ready(function() {
+    for(let i=0; i<tab.length ;i++) {
+        $('.table').append('<tr class=row' + i +'></tr>' );
+            for(let j = 0 ; j<1;j++) {
+                $('.row'+i).append('<td>' + tab[i].picture + '</td>');
+                $('.row'+i).append('<td>' + tab[i].name + '</td>');
+                $('.row'+i).append('<td>' + tab[i].isActive + '</td>');
+                $('.row'+i).append('<td>' + tab[i].creation + '</td>');
+            }
+    }
+})
+
+
+
+
