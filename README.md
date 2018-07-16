@@ -49,11 +49,12 @@ Voici quelques fonctionnalités que nous souhaitons :
 - [ X] Créez une simple page HTML avec un titre.
 - [X ] Ajoutez les libraries jQuery et Bootstrap qui nous serviront pour la suite du développement.
 
-Une fois que tout fonctionne, faites un premier commit ( vous aurez sûrement besoin d'initialiser le repository git ). Quelle est la commande à utiliser ? 🤔
+Une fois que tout fonctionne, faites un premier commit ( vous aurez sûrement besoin d'initialiser le repository git ). Quelle est la commande à utiliser ? 🤔 
+La commande à utiliser est git init.
 
 ### Récupération des données et affichage simple.
 
-- [ ] Créez dans votre fichier Javascript une variable dont la valeur correspond au tableau suivant :
+- [X ] Créez dans votre fichier Javascript une variable dont la valeur correspond au tableau suivant :
 
 <details>
  <summary>Exemple de données ( cliquer pour dérouler )</summary>
@@ -254,7 +255,7 @@ Une fois que tout fonctionne, faites un premier commit ( vous aurez sûrement be
 </details>
 
 Est ce que c'est mieux de déclarer la variable avec `let` ou `const` 🤔 ?
-*Votre réponse :*
+*Votre réponse :* C'est mieux de déclarer la variable avec un let. 
 
 ## Afficher dans une table bootstrap avec JQuery.
 
