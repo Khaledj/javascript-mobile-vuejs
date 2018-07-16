@@ -266,7 +266,7 @@ Nous voulons afficher une table avec sur chaque ligne les informations d'un proj
 - Le statut ( actif ou non ).
 - La date de création.
 
-- [ ] Ajoutez dans votre document html une table avec une en tête comprenant ces 4 colonnes.
+- [X ] Ajoutez dans votre document html une table avec une en tête comprenant ces 4 colonnes.
 
 - [ ] Enfin, affichez autant de lignes dans la table qu'il y a d'éléments dans votre tableau.
 
