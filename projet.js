@@ -192,15 +192,36 @@ let tab = [
 
 $(document).ready(function() {
     for(let i=0; i<tab.length ;i++) {
-        $('.table').append('<tr class=row' + i +'></tr>' );
-            for(let j = 0 ; j<1;j++) {
-                $('.row'+i).append('<td>' + tab[i].picture + '</td>');
-                $('.row'+i).append('<td>' + tab[i].name + '</td>');
-                $('.row'+i).append('<td>' + tab[i].isActive + '</td>');
-                $('.row'+i).append('<td>' + tab[i].creation + '</td>');
-            }
+        $('tbody').append('<tr class=row' + i +'></tr>' );
+        $('.row'+i).append('<td>' + tab[i].picture + '</td>');
+        $('.row'+i).append('<td>' + tab[i].name + '</td>');
+        $('.row'+i).append('<td>' + tab[i].isActive + '</td>');
+        $('.row'+i).append('<td>' + tab[i].creation + '</td>');
     }
+$('input').keyup(function() {
+    let recherche = $(this).val().toUpperCase();
+    $('tbody').empty();
+    research(tab,recherche);
 })
+})
+
+
+function research(tableau,chaine) {
+    let tab2 = [];
+    for(i=0; i<tableau.length; i++) {
+        if(tableau[i].name.startsWith(chaine)) {
+           tab2.push(tableau[i]);
+        }
+    }
+
+    for(let j=0; j<tab2.length ;j++) {
+        $('tbody').append('<tr class=row' + j +'></tr>' );
+        $('.row'+j).append('<td>' + tab2[j].picture + '</td>');
+        $('.row'+j).append('<td>' + tab2[j].name + '</td>');
+        $('.row'+j).append('<td>' + tab2[j].isActive + '</td>');
+        $('.row'+j).append('<td>' + tab2[j].creation + '</td>');
+    }
+}
 
 
 
