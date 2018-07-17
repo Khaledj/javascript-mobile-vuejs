@@ -193,49 +193,47 @@ let tab = [
 $(document).ready(function() {
     for(let i=0; i<tab.length ;i++) {
         $('tbody').append('<tr class=row' + i +'></tr>' );
-        $('.row'+i).append('<td>' + tab[i].picture + '</td>');
+        $('.row'+i).append("<td>" + "<img src=" + tab[i].picture + ">" + "</td>");
         $('.row'+i).append('<td>' + tab[i].name + '</td>');
         $('.row'+i).append('<td>' + tab[i].isActive + '</td>');
         $('.row'+i).append('<td>' + tab[i].creation + '</td>');
     }
-    $('tbody').empty();
-    convert(tab);
+     $('tbody').empty();
+     convert(tab);
 
-$('#recherche').keyup(function() {
-    let recherche = $(this).val().toUpperCase();
-    $('tbody').empty();
-    research(tab,recherche);
+     $('#recherche').keyup(function() {
+     let recherche = $(this).val().toUpperCase();
+     $('tbody').empty();
+     research(tab,recherche);
 })
-
-    $('.fa-caret-up').click(function() {
-        $('tbody').empty();
-        compare(tab);
+     $('.fa-caret-up').click(function() {
+         $('tbody').empty();
+         compare(tab);
     })
-    $('.fa-caret-down').click(function() {
-        $('tbody').empty();
-        compare(tab);
-    })
-    $('.fa-caret-up').click(function() {
-        decroissant(tab);
-    })
-
-    $('#name').click(function() {
-        $('tbody').empty();
-        compareName(tab);
-    })
-    $('#ajouter').click(function() {
-        $('tbody').empty();
-       let create =  creerProjet();
-        tab.push(create);
-        for(let j=0; j<tab.length ;j++) {
-            $('tbody').append('<tr class=row' + j +'></tr>' );
-            $('.row'+j).append('<td>' + tab[j].picture + '</td>');
+     $('.fa-caret-down').click(function() {
+         $('tbody').empty();
+         compare(tab);
+     })
+     $('.fa-caret-up').click(function() {
+         decroissant(tab);
+     })
+     $('#name').click(function() {
+         $('tbody').empty();
+         compareName(tab);
+     })
+     $('#ajouter').click(function() {
+         $('tbody').empty();
+        let create =  creerProjet();
+         tab.push(create);
+         for(let j=0; j<tab.length ;j++) {
+             $('tbody').append('<tr class=row' + j +'></tr>' );
+             $('.row'+j).append("<td>" + "<img src=" + tab[j].picture + ">" + "</td>");
             $('.row'+j).append('<td>' + tab[j].name + '</td>');
             $('.row'+j).append('<td>' + tab[j].isActive + '</td>');
-            $('.row'+j).append('<td>' + tab[j].creation + '</td>');
-        }
-        $("form")[0].reset();
-    })
+             $('.row'+j).append('<td>' + tab[j].creation + '</td>');
+         }
+         $("form")[0].reset();
+     })
 
 
 })
@@ -259,7 +257,7 @@ function research(tableau,chaine) {
 
     for(let j=0; j<tab2.length ;j++) {
         $('tbody').append('<tr class=row' + j +'></tr>' );
-        $('.row'+j).append('<td>' + tab2[j].picture + '</td>');
+       $('.row'+j).append("<td>" + "<img src=" + tab2[j].picture + ">" + "</td>");
         $('.row'+j).append('<td>' + tab2[j].name + '</td>');
         $('.row'+j).append('<td>' + tab2[j].isActive + '</td>');
         $('.row'+j).append('<td>' + tab2[j].creation + '</td>');
@@ -277,7 +275,7 @@ function convert (tableau) {
     for(let j=0; j<tableau.length ;j++) {
         tableau[j].creation = d[j];
         $('tbody').append('<tr class=row' + j +'></tr>' );
-        $('.row'+j).append('<td>' + tableau[j].picture + '</td>');
+        $('.row'+j).append("<td>" + "<img src=" + tableau[j].picture + ">" + "</td>");
         $('.row'+j).append('<td>' + tableau[j].name + '</td>');
         $('.row'+j).append('<td>' + tableau[j].isActive + '</td>');
         $('.row'+j).append('<td>' +  tableau[j].creation + '</td>');
@@ -299,7 +297,7 @@ function compare(tableau) {
     })
     for(let j=0; j<compare.length ;j++) {
         $('tbody').append('<tr class=row' + j +'></tr>' );
-        $('.row'+j).append('<td>' + compare[j].picture + '</td>');
+        $('.row'+j).append("<td>" + "<img src=" + compare[j].picture + ">" + "</td>");
         $('.row'+j).append('<td>' + compare[j].name + '</td>');
         $('.row'+j).append('<td>' + compare[j].isActive + '</td>');
         $('.row'+j).append('<td>' +  compare[j].creation + '</td>');
@@ -320,7 +318,7 @@ function compareName(tableau) {
     })
     for(let j=0; j<compare.length ;j++) {
         $('tbody').append('<tr class=row' + j +'></tr>' );
-        $('.row'+j).append('<td>' + compare[j].picture + '</td>');
+        $('.row'+j).append("<td>" + "<img src=" + compare[j].picture + ">" + "</td>");
         $('.row'+j).append('<td>' + compare[j].name + '</td>');
         $('.row'+j).append('<td>' + compare[j].isActive + '</td>');
         $('.row'+j).append('<td>' +  compare[j].creation + '</td>');
@@ -333,7 +331,7 @@ function decroissant(tableau) {
     $('tbody').empty();
     for(let j=0; j<decroissant.length ;j++) {
         $('tbody').append('<tr class=row' + j +'></tr>' );
-        $('.row'+j).append('<td>' + decroissant[j].picture + '</td>');
+        $('.row'+j).append("<td>" + "<img src=" + decroissant[j].picture + ">" + "</td>");
         $('.row'+j).append('<td>' + decroissant[j].name + '</td>');
         $('.row'+j).append('<td>' + decroissant[j].isActive + '</td>');
         $('.row'+j).append('<td>' + decroissant[j].creation + '</td>');
