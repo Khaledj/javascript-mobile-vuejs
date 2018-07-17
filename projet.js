@@ -223,8 +223,31 @@ $('#recherche').keyup(function() {
         $('tbody').empty();
         compareName(tab);
     })
+    $('#ajouter').click(function() {
+        $('tbody').empty();
+       let create =  creerProjet();
+        tab.push(create);
+        for(let j=0; j<tab.length ;j++) {
+            $('tbody').append('<tr class=row' + j +'></tr>' );
+            $('.row'+j).append('<td>' + tab[j].picture + '</td>');
+            $('.row'+j).append('<td>' + tab[j].name + '</td>');
+            $('.row'+j).append('<td>' + tab[j].isActive + '</td>');
+            $('.row'+j).append('<td>' + tab[j].creation + '</td>');
+        }
+        $("form")[0].reset();
+    })
+
 
 })
+
+function creerProjet() {
+        let name = $('#nom-projet').val().toUpperCase();
+        let date = $('#date-creation').val();
+        let image = $('#image-projet').val();
+        let checkbox = document.getElementById("projet-actif");
+        let check = checkbox.checked;
+        return {"isActive": check, "name" : name, "picture" : image, "creation":date }
+}
 
 function research(tableau,chaine) {
     let tab2 = [];
