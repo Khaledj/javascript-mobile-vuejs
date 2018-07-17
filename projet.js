@@ -198,16 +198,20 @@ $(document).ready(function() {
         $('.row'+i).append('<td>' + tab[i].isActive + '</td>');
         $('.row'+i).append('<td>' + tab[i].creation + '</td>');
     }
+    $('tbody').empty();
+    convert(tab);
+
 $('input').keyup(function() {
     let recherche = $(this).val().toUpperCase();
     $('tbody').empty();
     research(tab,recherche);
 })
-    $('.fas').click(function() {
 
+    $('.fas').click(function() {
+        $('tbody').empty();
+        compare(tab);
     })
 })
-
 
 function research(tableau,chaine) {
     let tab2 = [];
@@ -226,6 +230,54 @@ function research(tableau,chaine) {
     }
     return tab2;
 }
+
+function convert (tableau) {
+    let d = [];
+    let t = tableau;
+    for (i = 0; i < tableau.length; i++) {
+        d.push(new Date(tableau[i].creation));
+    }
+
+    for(let j=0; j<tableau.length ;j++) {
+        tableau[j].creation = d[j];
+        $('tbody').append('<tr class=row' + j +'></tr>' );
+        $('.row'+j).append('<td>' + tableau[j].picture + '</td>');
+        $('.row'+j).append('<td>' + tableau[j].name + '</td>');
+        $('.row'+j).append('<td>' + tableau[j].isActive + '</td>');
+        $('.row'+j).append('<td>' +  tableau[j].creation + '</td>');
+    }
+    return t;
+
+}
+
+function compare(tableau) {
+    let compare = tableau;
+    compare.sort(function (a, b) {
+        if (a.creation > b.creation) {
+            return 1;
+        } else if (a.creation < b.creation) {
+            return -1;
+        } else if (a.creaion === b.creation) {
+            return 0;
+        }
+    })
+    for(let j=0; j<compare.length ;j++) {
+        $('tbody').append('<tr class=row' + j +'></tr>' );
+        $('.row'+j).append('<td>' + compare[j].picture + '</td>');
+        $('.row'+j).append('<td>' + compare[j].name + '</td>');
+        $('.row'+j).append('<td>' + compare[j].isActive + '</td>');
+        $('.row'+j).append('<td>' +  compare[j].creation + '</td>');
+    }
+}
+
+
+
+
+
+
+
+
+
 
 
 

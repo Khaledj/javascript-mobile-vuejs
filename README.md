@@ -302,7 +302,7 @@ Voici un exemple d'interface auquelle vous [pourriez parvenir](http://recordit.c
 
 ## Trier par date croissante et/ou décroissante.
 
-- [ ] Nous allons ajouter une icone dans le header de notre table, lorsque nous cliquerons dessus le tableau sera trié du plus récent au plus ancien.
+- [X ] Nous allons ajouter une icone dans le header de notre table, lorsque nous cliquerons dessus le tableau sera trié du plus récent au plus ancien.
 
 Vous pouvez par exemple utiliser la très connue librarie [Font Awesome](https://fontawesome.com/how-to-use/on-the-web/setup/getting-started?using=web-fonts-with-css)
 
