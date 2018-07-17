@@ -207,9 +207,21 @@ $('input').keyup(function() {
     research(tab,recherche);
 })
 
-    $('.fas').click(function() {
+    $('.fa-caret-up').click(function() {
         $('tbody').empty();
         compare(tab);
+    })
+    $('.fa-caret-down').click(function() {
+        $('tbody').empty();
+        compare(tab);
+    })
+    $('.fa-caret-up').click(function() {
+        decroissant(tab);
+    })
+
+    $('#name').click(function() {
+        $('tbody').empty();
+        compareName(tab);
     })
 })
 
@@ -252,12 +264,33 @@ function convert (tableau) {
 
 function compare(tableau) {
     let compare = tableau;
-    compare.sort(function (a, b) {
-        if (a.creation > b.creation) {
+    compare.sort(function (date1, date2) {
+        if (date1.creation > date2.creation) {
             return 1;
-        } else if (a.creation < b.creation) {
+        } else if (date1.creation < date2.creation) {
             return -1;
-        } else if (a.creaion === b.creation) {
+        } else if (date1.creation === date2.creation) {
+            return 0;
+        }
+    })
+    for(let j=0; j<compare.length ;j++) {
+        $('tbody').append('<tr class=row' + j +'></tr>' );
+        $('.row'+j).append('<td>' + compare[j].picture + '</td>');
+        $('.row'+j).append('<td>' + compare[j].name + '</td>');
+        $('.row'+j).append('<td>' + compare[j].isActive + '</td>');
+        $('.row'+j).append('<td>' +  compare[j].creation + '</td>');
+    }
+    return compare;
+}
+
+function compareName(tableau) {
+    let compare = tableau;
+    compare.sort(function (name1, name2) {
+        if (name1.name > name2.name) {
+            return 1;
+        } else if (name1.name < name2.name) {
+            return -1;
+        } else if (name1.name === name2.name) {
             return 0;
         }
     })
@@ -270,9 +303,19 @@ function compare(tableau) {
     }
 }
 
-
-
-
+function decroissant(tableau) {
+    let croissant = compare(tableau);
+    let decroissant = croissant.reverse();
+    $('tbody').empty();
+    for(let j=0; j<decroissant.length ;j++) {
+        $('tbody').append('<tr class=row' + j +'></tr>' );
+        $('.row'+j).append('<td>' + decroissant[j].picture + '</td>');
+        $('.row'+j).append('<td>' + decroissant[j].name + '</td>');
+        $('.row'+j).append('<td>' + decroissant[j].isActive + '</td>');
+        $('.row'+j).append('<td>' + decroissant[j].creation + '</td>');
+    }
+    return decroissant;
+}
 
 
 

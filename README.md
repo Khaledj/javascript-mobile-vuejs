@@ -310,7 +310,7 @@ La fonction [sort](https://developer.mozilla.org/fr/docs/Web/JavaScript/Referenc
 
 Voici un exemple d'interface à laquelle vous [pourriez parvenir](http://recordit.co/Uvb85D470w)
 
-- [ ] Autre idée : trier par ordre alphabétique les noms des projets.
+- [X ] Autre idée : trier par ordre alphabétique les noms des projets.
 
 ## Ajouter un nouveau projet.
 
