@@ -201,7 +201,7 @@ $(document).ready(function() {
     $('tbody').empty();
     convert(tab);
 
-$('input').keyup(function() {
+$('#recherche').keyup(function() {
     let recherche = $(this).val().toUpperCase();
     $('tbody').empty();
     research(tab,recherche);
@@ -223,6 +223,7 @@ $('input').keyup(function() {
         $('tbody').empty();
         compareName(tab);
     })
+
 })
 
 function research(tableau,chaine) {
@@ -316,6 +317,7 @@ function decroissant(tableau) {
     }
     return decroissant;
 }
+
 
 
 
