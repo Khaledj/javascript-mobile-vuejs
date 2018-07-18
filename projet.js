@@ -216,7 +216,8 @@ $(document).ready(function() {
          let create =  creerProjet();
           tab.push(create);
           dessiner(tab);
-          $("form")[0].reset();
+          //$("form")[0].reset();
+          document.getElementById("form").reset();
       })
 });
 

@@ -325,7 +325,7 @@ Voici un exemple de résultats :
 
 ### 1) Initialiser une application Vue.
 
-- [ ] Commençons par créer une application VueJS, pour cela utilisons l'interface en ligne de commande officielle `vue-cli`.
+- [ X] Commençons par créer une application VueJS, pour cela utilisons l'interface en ligne de commande officielle `vue-cli`.
 
 Si ce n'est pas fait, il faut d'abord l'installer avec npm :
 
@@ -335,9 +335,9 @@ npm install --global vue-cli
 
 **Question :** Rappeler ce qu'est npm et pourquoi nous utilisons l'option --global ?
 
-*Votre réponse :*
+*Votre réponse :*  npm permet de partager et emprunter les paquets node, il contient les dépendances.  L'option global permet d'utiliser le paquet global c'est à dire sur l'ordinateur. 
 
-- [ ] Créez maintenant l'application :
+- [ X] Créez maintenant l'application :
 
 ```
 vue init webpack [NOM_PROJET]
@@ -350,17 +350,19 @@ Des questions vont vous être posées, voici un exemple de choix :
 
 * Quels sont des bons réflexes à avoir quand vous télécharger un nouveau projet ? Quels fichiers regarder ? Avant même de commencer à lancer l'application et sans regarder le code vous pouvez apprendre plein de choses.
 
-*Votre réponse :*
+*Votre réponse :*   Il faut regarder le fichier package json (voir les dépendances)  et le fichier readme (permet de connaitre les commandes pour lancer le projet)
 
 * Si vous regardez le fichier `README.md` du projet vous voyez que trois commandes sont indiquées, quel est le but de chacune ?
 
-*Votre réponse :*
+*Votre réponse :*  npm install : telecharge et installe les packages et dépendance
+                                npm run dev : pour lancer le serveur en local
+								npm run build : compilation des fichiers ((js,css)
  
 * Lancez le projet.
 
-- [ ] Une fois que tout fonctionne, faites un premier commit ( vous aurez sûrement besoin d'initialiser le repository git ). Quelle est la commande à utiliser ? 🤔
+- [X ] Une fois que tout fonctionne, faites un premier commit ( vous aurez sûrement besoin d'initialiser le repository git ). Quelle est la commande à utiliser ? 🤔
 
-*Votre réponse :*
+*Votre réponse :* la commande à utiliser est git init
 
 
 ### 2) Analyse du contenu du starter.
