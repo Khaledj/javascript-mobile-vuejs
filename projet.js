@@ -191,153 +191,112 @@ let tab = [
 ];
 
 $(document).ready(function() {
-    for(let i=0; i<tab.length ;i++) {
-        $('tbody').append('<tr class=row' + i +'></tr>' );
-        $('.row'+i).append("<td>" + "<img src=" + tab[i].picture + ">" + "</td>");
-        $('.row'+i).append('<td>' + tab[i].name + '</td>');
-        $('.row'+i).append('<td>' + tab[i].isActive + '</td>');
-        $('.row'+i).append('<td>' + tab[i].creation + '</td>');
+      dessiner(tab);
+      $('tbody').empty();
+      convert(tab);
+      $('#recherche').keyup(function() {
+      let recherche = $(this).val().toUpperCase();
+      $('tbody').empty();
+      research(tab,recherche);
+      })
+      $('.fa-caret-up').click(function() {
+         $('tbody').empty();
+          compare(tab);
+     })
+      $('.fa-caret-down').click(function() {
+          $('tbody').empty();
+          decroissant(tab);
+      })
+      $('#name').click(function() {
+          $('tbody').empty();
+          compareName(tab);
+      })
+      $('#ajouter').click(function() {
+          $('tbody').empty();
+         let create =  creerProjet();
+          tab.push(create);
+          dessiner(tab);
+          $("form")[0].reset();
+      })
+});
+
+function dessiner (tableau) {
+    for (let j = 0; j < tableau.length; j++) {
+        $('tbody').append('<tr class=row' + j + '></tr>');
+         $('.row' + j).append("<td>" + "<img src=" + tableau[j].picture + ">" + "</td>");
+         $('.row' + j).append('<td>' + tableau[j].name + '</td>');
+         $('.row' + j).append('<td>' + tableau[j].isActive + '</td>');
+         $('.row' + j).append('<td>' + tableau[j].creation + '</td>');
     }
-     $('tbody').empty();
-     convert(tab);
-
-     $('#recherche').keyup(function() {
-     let recherche = $(this).val().toUpperCase();
-     $('tbody').empty();
-     research(tab,recherche);
-})
-     $('.fa-caret-up').click(function() {
-         $('tbody').empty();
-         compare(tab);
-    })
-     $('.fa-caret-down').click(function() {
-         $('tbody').empty();
-         compare(tab);
-     })
-     $('.fa-caret-up').click(function() {
-         decroissant(tab);
-     })
-     $('#name').click(function() {
-         $('tbody').empty();
-         compareName(tab);
-     })
-     $('#ajouter').click(function() {
-         $('tbody').empty();
-        let create =  creerProjet();
-         tab.push(create);
-         for(let j=0; j<tab.length ;j++) {
-             $('tbody').append('<tr class=row' + j +'></tr>' );
-             $('.row'+j).append("<td>" + "<img src=" + tab[j].picture + ">" + "</td>");
-            $('.row'+j).append('<td>' + tab[j].name + '</td>');
-            $('.row'+j).append('<td>' + tab[j].isActive + '</td>');
-             $('.row'+j).append('<td>' + tab[j].creation + '</td>');
-         }
-         $("form")[0].reset();
-     })
-
-
-})
-
-function creerProjet() {
-        let name = $('#nom-projet').val().toUpperCase();
-        let date = $('#date-creation').val();
-        let image = $('#image-projet').val();
-        let checkbox = document.getElementById("projet-actif");
-        let check = checkbox.checked;
-        return {"isActive": check, "name" : name, "picture" : image, "creation":date }
 }
-
-function research(tableau,chaine) {
-    let tab2 = [];
-    for(i=0; i<tableau.length; i++) {
-        if(tableau[i].name.startsWith(chaine)) {
-           tab2.push(tableau[i]);
-        }
-    }
-
-    for(let j=0; j<tab2.length ;j++) {
-        $('tbody').append('<tr class=row' + j +'></tr>' );
-       $('.row'+j).append("<td>" + "<img src=" + tab2[j].picture + ">" + "</td>");
-        $('.row'+j).append('<td>' + tab2[j].name + '</td>');
-        $('.row'+j).append('<td>' + tab2[j].isActive + '</td>');
-        $('.row'+j).append('<td>' + tab2[j].creation + '</td>');
-    }
-    return tab2;
-}
-
 function convert (tableau) {
-    let d = [];
-    let t = tableau;
-    for (i = 0; i < tableau.length; i++) {
-        d.push(new Date(tableau[i].creation));
-    }
+     let d = [];
+     for (i = 0; i < tableau.length; i++) {
+         d.push(new Date(tableau[i].creation));
+         tableau[i].creation = d[i];
+     }
+     dessiner(tableau);
+     return tableau;
+ }
+ function research(tableau,chaine) {
+     let tab2 = [];
+     for(i=0; i<tableau.length; i++) {
+        if(tableau[i].name.startsWith(chaine)) {
+             tab2.push(tableau[i]);
+         }
+     }
 
-    for(let j=0; j<tableau.length ;j++) {
-        tableau[j].creation = d[j];
-        $('tbody').append('<tr class=row' + j +'></tr>' );
-        $('.row'+j).append("<td>" + "<img src=" + tableau[j].picture + ">" + "</td>");
-        $('.row'+j).append('<td>' + tableau[j].name + '</td>');
-        $('.row'+j).append('<td>' + tableau[j].isActive + '</td>');
-        $('.row'+j).append('<td>' +  tableau[j].creation + '</td>');
-    }
-    return t;
-
-}
-
-function compare(tableau) {
-    let compare = tableau;
-    compare.sort(function (date1, date2) {
-        if (date1.creation > date2.creation) {
-            return 1;
-        } else if (date1.creation < date2.creation) {
-            return -1;
-        } else if (date1.creation === date2.creation) {
-            return 0;
-        }
-    })
-    for(let j=0; j<compare.length ;j++) {
-        $('tbody').append('<tr class=row' + j +'></tr>' );
-        $('.row'+j).append("<td>" + "<img src=" + compare[j].picture + ">" + "</td>");
-        $('.row'+j).append('<td>' + compare[j].name + '</td>');
-        $('.row'+j).append('<td>' + compare[j].isActive + '</td>');
-        $('.row'+j).append('<td>' +  compare[j].creation + '</td>');
-    }
-    return compare;
-}
-
-function compareName(tableau) {
-    let compare = tableau;
-    compare.sort(function (name1, name2) {
+    dessiner(tab2);
+     return tab2;
+ }
+ function compare(tableau) {
+     let compare = tableau;
+     compare.sort(function (date1, date2) {
+         if (date1.creation > date2.creation) {
+             return 1;
+         } else if (date1.creation < date2.creation) {
+             return -1;
+         } else if (date1.creation === date2.creation) {
+             return 0;
+         }
+     })
+     dessiner(compare);
+     return compare;
+ }
+ function decroissant(tableau) {
+     let croissant = compare(tableau);
+     let decroissant = croissant.reverse();
+     $('tbody').empty();
+    dessiner(decroissant);
+     return decroissant;
+ }
+ function compareName(tableau) {
+     let compare = tableau;
+     compare.sort(function (name1, name2) {
         if (name1.name > name2.name) {
-            return 1;
-        } else if (name1.name < name2.name) {
+             return 1;
+         } else if (name1.name < name2.name) {
             return -1;
-        } else if (name1.name === name2.name) {
+         } else if (name1.name === name2.name) {
             return 0;
-        }
-    })
-    for(let j=0; j<compare.length ;j++) {
-        $('tbody').append('<tr class=row' + j +'></tr>' );
-        $('.row'+j).append("<td>" + "<img src=" + compare[j].picture + ">" + "</td>");
-        $('.row'+j).append('<td>' + compare[j].name + '</td>');
-        $('.row'+j).append('<td>' + compare[j].isActive + '</td>');
-        $('.row'+j).append('<td>' +  compare[j].creation + '</td>');
-    }
+         }
+     })
+     dessiner(compare);
 }
+ function creerProjet() {
+         let name = $('#nom-projet').val().toUpperCase();
+         let date = new Date ($('#date-creation').val());
+         let image = $('#image-projet').val();
+         let checkbox = document.getElementById("projet-actif");
+         let check = checkbox.checked;
+         return {"isActive": check, "name" : name, "picture" : image, "creation":date }
+ }
 
-function decroissant(tableau) {
-    let croissant = compare(tableau);
-    let decroissant = croissant.reverse();
-    $('tbody').empty();
-    for(let j=0; j<decroissant.length ;j++) {
-        $('tbody').append('<tr class=row' + j +'></tr>' );
-        $('.row'+j).append("<td>" + "<img src=" + decroissant[j].picture + ">" + "</td>");
-        $('.row'+j).append('<td>' + decroissant[j].name + '</td>');
-        $('.row'+j).append('<td>' + decroissant[j].isActive + '</td>');
-        $('.row'+j).append('<td>' + decroissant[j].creation + '</td>');
-    }
-    return decroissant;
-}
+
+
+
+
+
 
 
 
