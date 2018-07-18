@@ -371,11 +371,11 @@ Des questions vont vous être posées, voici un exemple de choix :
 
 | Question                      | Réponse           |
 | -------------                 |:-------------:|
-| Nombre de dépendances de l'application|
-| Dossier `src/`                   |       |
-| Dossier `build/` |       |
-| Fichier `App.vue` |       |
-| Fichier `main.js` |       |
+| Nombre de dépendances de l'application| 1 dependance
+| Dossier `src/`                   | | fichier de dévelopement de l'application (image,javascript,css, composant) 
+| Dossier `build/` |       |  Configuration pour le serveur de développement et de production
+| Fichier `App.vue` |       | Composant qui permet d'afficher la page de départ
+| Fichier `main.js` |       | Fichier javascript de base
 | Dossier `router/` |       |
 
 
@@ -397,17 +397,17 @@ C'est à dire qu'un projet respecte ce format :
 }
 ```
 
-- [ ] Changez le contenu du composant `HelloWorld.vue` afin qu'il puisse afficher un projet.
+- [X ] Changez le contenu du composant `HelloWorld.vue` afin qu'il puisse afficher un projet.
 
 Voici un exemple de style que cela pourrait avoir :
 
 ![](images/vue-project-comp.png)
 
-- [ ] Renommez le fichier pour qu'il reflète son contenu.
+- [X ] Renommez le fichier pour qu'il reflète son contenu.
 
 ##### 2) Changer le style
 
-- [ ] Faites en sorte de changer le style entre un projet actif et un projet non actif, par exemple, la couleur du nom du projet ou la couleur de fond.
+- [ X] Faites en sorte de changer le style entre un projet actif et un projet non actif, par exemple, la couleur du nom du projet ou la couleur de fond.
 
 
 ##### 3) Marquer l'état avec une checkbox
