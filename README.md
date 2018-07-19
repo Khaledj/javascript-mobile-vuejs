@@ -427,14 +427,14 @@ VueJS offre la possibilité de faire des listes très facilement, nous allons le
 
 ##### 1) Sans créer de nouveau composant.
 
-- [ ] Dans le code du composant précédemment créé, faites les modifications pour afficher la liste.
+- [ X] Dans le code du composant précédemment créé, faites les modifications pour afficher la liste.
 
 ##### 2) En créant un nouveau composant.
 
-- [ ] On souhaite séparer le composant affichant la liste, `ProjectsList`, de celui affichant un élément de la liste, `Project` ( c'est extrêmement classique ), ce qui nous permettra de réutiliser le composant `Project` indépendamment.
+- [X ] On souhaite séparer le composant affichant la liste, `ProjectsList`, de celui affichant un élément de la liste, `Project` ( c'est extrêmement classique ), ce qui nous permettra de réutiliser le composant `Project` indépendamment.
 
-* Comment passe-t-on de la donnée à un composant enfant ?
-* Quels sont les avantages en procédant ainsi ?
+* Comment passe-t-on de la donnée à un composant enfant ? En utilisant les props 
+* Quels sont les avantages en procédant ainsi ? 
 
 Ressources : 
   * https://vuejs.org/v2/guide/components-props.html#ad
