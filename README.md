@@ -412,7 +412,7 @@ Voici un exemple de style que cela pourrait avoir :
 
 ##### 3) Marquer l'état avec une checkbox
 
-- [ ] Plutôt que d'écrire du texte, vous allez marquer l'état actif ou non avec une checkbox, la checkbox doit être fonctionnelle et permettre le changement.
+- [ X] Plutôt que d'écrire du texte, vous allez marquer l'état actif ou non avec une checkbox, la checkbox doit être fonctionnelle et permettre le changement.
 
 Voici un [exemple](http://recordit.co/pkAPiKSGsg.) de résultat auquel vous pourriez parvenir.
 
