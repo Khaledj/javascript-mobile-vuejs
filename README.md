@@ -434,7 +434,7 @@ VueJS offre la possibilité de faire des listes très facilement, nous allons le
 - [X ] On souhaite séparer le composant affichant la liste, `ProjectsList`, de celui affichant un élément de la liste, `Project` ( c'est extrêmement classique ), ce qui nous permettra de réutiliser le composant `Project` indépendamment.
 
 * Comment passe-t-on de la donnée à un composant enfant ? En utilisant les props 
-* Quels sont les avantages en procédant ainsi ? 
+* Quels sont les avantages en procédant ainsi ? De pouvoir récupérer les données d'un composant à un autre
 
 Ressources : 
   * https://vuejs.org/v2/guide/components-props.html#ad
@@ -445,19 +445,19 @@ Voici un exemple : ![](images/vue-projects-list.png)
 
 ### 5) Faire une liste dans une nouvelle route.
 
-- [ ] Nous allons séparer la vue détaillée d'un projet de la vue contenant la liste, qui sera alors affichée sous forme de table.
+- [X ] Nous allons séparer la vue détaillée d'un projet de la vue contenant la liste, qui sera alors affichée sous forme de table.
 
 ##### 1) Créer une nouvelle route
 
-- [ ] Ajoutez une nouvelle route dans votre projet, vous aurez besoin de créer un nouveau composant qui contiendra la nouvelle table.
+- [ X] Ajoutez une nouvelle route dans votre projet, vous aurez besoin de créer un nouveau composant qui contiendra la nouvelle table.
 
 ##### 2) Afficher le tableau des noms des projets.
 
-- [ ] Affichez sous forme de table la liste des projets avec uniquement leur nom.
+- [ X] Affichez sous forme de table la liste des projets avec uniquement leur nom.
 
 ##### 3) Cliquer sur un élément pour passer à une autre page.
 
-- [ ] Dans ce nouveau composant, faites en sorte que lorsqu'on clique sur un élément de la table, alors on est redirigé vers la page présentant le détail de ce projet.
+- [ X] Dans ce nouveau composant, faites en sorte que lorsqu'on clique sur un élément de la table, alors on est redirigé vers la page présentant le détail de ce projet.
 
 Vous aurez besoin de passer des paramètres d'une Vue à l'autre : https://router.vuejs.org/guide/essentials/passing-props.html
 
@@ -466,9 +466,9 @@ Voici un [exemple](http://recordit.co/dJ5uhyVRK0) d'interface à laquelle vous p
 
 ### 6) Intégrez les fonctions de recherche et de tri de l'exercice précédent.
 
-- [ ] En vous basant sur ce que vous avez fait à l'exercice précédent, intégrez dans votre application une fonction de recherche et de tri par date de création des objets.
+- [ X] En vous basant sur ce que vous avez fait à l'exercice précédent, intégrez dans votre application une fonction de recherche et de tri par date de création des objets.
 
-* Quelle est la différence de logique entre JQuery et VueJS ?
+* Quelle est la différence de logique entre JQuery et VueJS ? On peu modifier les données automatiquement sans redessiner le tableau de donnée
 
 Ressources : 
   * https://vuejs.org/v2/guide/list.html
