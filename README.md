@@ -523,9 +523,9 @@ Jusqu'à maintenant, nous avons fait une requête pour récuperer des données, 
 
 * À quoi correspond la notion de promesse ? Pourquoi en a-t-on besoin en Javascript ? Quelles sont les alternatives ?
 *Votre réponse :* la notion de promesse permet de promettre un resultat réussi ou rejeté mais de continuer tout de meme la suite du code quelque soit le résultat. On en a besoin pour continuer à faire des actions sur le site même si 
-le résultat n'ai toujours pas reçu.
+le résultat n'ai toujours pas reçu.Les alternatives sont les fonctions callback et async qui peuvent aussi faire des promesses mais d'une autre façon
 
-- [ ] Dans le tableau des projets, ajoutez une colonne permettant de supprimer un projet, la suppression doit s'accompagner d'un appel à l'API afin de réellement supprimer le projet.
+- [X ] Dans le tableau des projets, ajoutez une colonne permettant de supprimer un projet, la suppression doit s'accompagner d'un appel à l'API afin de réellement supprimer le projet.
 
 
 Voici un [exemple de résultat](http://recordit.co/4zIK4ILdKU) auquel vous pourriez parvenir.
