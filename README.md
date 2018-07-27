@@ -493,7 +493,7 @@ https://daily-standup-campus.herokuapp.com/api/projects?access_token=eyJhbGciOiJ
 
 Celle ci contient un token d'identification, nous verrons plus tard comment cela fonctionne.
 
-- [ ] En utilisant axios, mettez à jour votre code pour qu'il affiche les données provenant de l'API.
+- [X ] En utilisant axios, mettez à jour votre code pour qu'il affiche les données provenant de l'API.
 
 *Attention, la structure d'un projet est différente de celle utilisée précedemment, plus de `picture`, plus de `isActive` mais d'autres infos sur le créateur et les collaborateurs du projet.*
 
@@ -502,13 +502,13 @@ Voici un exemple d'adaptation du composant :
 ![](images/vue-comp-adapt.png)
 
 * À quel moment de la vie d'un composant faisons-nous un appel HTTP ?
-*Votre réponse :*
+*Votre réponse :* Au moment de la création du composant
 
 * Comment faire pour utiliser une librairie externe en VueJS ?
-*Votre réponse :*
+*Votre réponse :* Il faut importer axios dans le composant utilisé
 
 * Comment savoir si la requête est en cours ou non ? Ajouter un loader pour montrer que la requête est en cours.
-*Votre réponse :*
+*Votre réponse :* axios est une notion de promesse du coup il faut mettre un loader avant et apres le axios. 
 
 Ressources : 
   * https://vuejs.org/v2/guide/list.html
@@ -519,10 +519,11 @@ Ressources :
 Jusqu'à maintenant, nous avons fait une requête pour récuperer des données, mais nous voulons aussi modifier des données existantes.
 
 * Quels sont les 4 types de requêtes les plus courantes en HTTP ?
-*Votre réponse :*
+*Votre réponse :* les 4 requêtes sont : create,read,update,delete
 
 * À quoi correspond la notion de promesse ? Pourquoi en a-t-on besoin en Javascript ? Quelles sont les alternatives ?
-*Votre réponse :*
+*Votre réponse :* la notion de promesse permet de promettre un resultat réussi ou rejeté mais de continuer tout de meme la suite du code quelque soit le résultat. On en a besoin pour continuer à faire des actions sur le site même si 
+le résultat n'ai toujours pas reçu.
 
 - [ ] Dans le tableau des projets, ajoutez une colonne permettant de supprimer un projet, la suppression doit s'accompagner d'un appel à l'API afin de réellement supprimer le projet.
 
